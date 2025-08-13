@@ -7,11 +7,14 @@ canvas.height = window.innerHeight;
 let goatImg = new Image();
 goatImg.src = "goat.png";
 
+let groundY = canvas.height - 150; // punto di terra
+let jumpHeight = 150; // altezza del salto
+
 let goat = {
   x: canvas.width / 2 - 50,
-  y: canvas.height - 150,
-  width: 100,
-  height: 100,
+  y: groundY,
+  width: 120,
+  height: 120,
   dy: 0,
   jumping: false
 };
@@ -24,11 +27,11 @@ function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // gravità
-  if (goat.y < canvas.height - 150) {
+  if (goat.y < groundY) {
     goat.dy += 0.5;
   } else {
     goat.dy = 0;
-    goat.y = canvas.height - 150;
+    goat.y = groundY;
     goat.jumping = false;
   }
 
@@ -45,6 +48,8 @@ function jump() {
   }
 }
 
+// Compatibilità touch e click
 canvas.addEventListener("touchstart", jump);
+canvas.addEventListener("mousedown", jump);
 
 gameLoop();
