@@ -9,5 +9,5 @@ html, body {
 canvas {
   display: block;
   background-color: black;
-  touch-action: none; /* Permette touch su mobile */
+  touch-action: none;
 }
