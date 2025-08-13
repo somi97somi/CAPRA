@@ -1,13 +1,28 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: black;
-  overflow: hidden;
+body {
+   margin: 0;
+   overflow: hidden;
+   background-image: url('sfondo.jpg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
 }
-
-canvas {
-  display: block;
-  background-color: black;
-  touch-action: none;
+#game-container {
+   position: relative;
+   width: 100vw;
+   height: 100vh;
+}
+#object {
+   position: absolute;
+   width: 100px;
+   height: 100px;
+   background-color: transparent;
+   border-radius: 0;
+   background-image: url('goat.png');
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   transition: bottom 0.2s ease-out;
 }
